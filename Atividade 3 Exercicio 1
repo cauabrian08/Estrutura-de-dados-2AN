@@ -1,0 +1,102 @@
+Exercicio 1
+Análise do Código
+Primeiro, aqui está o código fornecido, com correções para deixá-lo em um formato que
+possa ser compilado:
+
+#include &lt;stdio.h&gt;
+typedef struct {
+double peso;
+int idade;
+double altura;
+} pessoa; // Correção: fechando a struct corretamente
+void imprimePessoa(pessoa p) {
+printf(&quot;Peso: %.1f. Idade: %d. Altura: %.2lf.\n\n&quot;, p.peso,
+p.idade, p.altura); // Correção da sintaxe printf
+}
+int main() {
+pessoa pessoas[5], p1; // Declaração do vetor de pessoas
+pessoas[0].peso = 80.6; // Atribuindo peso à primeira pessoa
+pessoas[0].idade = 40; // Atribuindo idade à primeira pessoa
+pessoas[0].altura = 1.70; // Atribuindo altura à primeira pessoa
+p1 = pessoas[0]; // Copiando os dados da primeira pessoa para p1
+if (p1.idade &gt; 20) // Correção: usando o operador correto para
+comparação
+p1.idade++; // Incrementa a idade se maior que 20
+pessoas[1] = pessoas[0]; // Copia os dados da primeira pessoa
+para a segunda
+imprimePessoa(p1); // Imprime os dados da pessoa p1
+imprimePessoa(pessoas[0]); // Imprime os dados da primeira pessoa
+imprimePessoa(pessoas[1]); // Imprime os dados da segunda pessoa
+// As linhas abaixo tentam imprimir pessoas não inicializadas,
+causando comportamento indefinido
+// Vou corrigir isso mais abaixo ao criar uma função que recebe os
+dados do usuário
+return 0; // Finaliza o programa
+}
+Comentários do Código
+1. Inclusão de Biblioteca: #include &lt;stdio.h&gt; - Inclui a biblioteca padrão de
+entrada e saída.
+2. Definição de Estrutura: typedef struct {...} pessoa; - Define uma
+estrutura chamada pessoa que contém três campos: peso, idade e altura.
+3. Função de Impressão: void imprimePessoa(pessoa p) - Define uma função
+que imprime os dados de uma pessoa.
+4. Função Principal: int main() - Início da execução do programa.
+
+5. Declaração do Vetor: pessoa pessoas[5], p1; - Declara um vetor de 5
+pessoas e uma variável p1.
+6. Inicialização dos Dados: Atribui valores aos campos da primeira pessoa.
+7. Copia Dados: p1 = pessoas[0]; - Copia os dados da primeira pessoa para p1.
+8. Condição: if (p1.idade &gt; 20) - Verifica se a idade de p1 é maior que 20 e
+incrementa se for o caso.
+9. Copia Para Outra Pessoa: pessoas[1] = pessoas[0]; - Copia os dados da
+primeira pessoa para a segunda.
+10. Impressão de Dados: Chama imprimePessoa para imprimir os dados de p1 e
+as duas primeiras pessoas no vetor.
+11. Retorno: return 0; - Indica que o programa terminou com sucesso.
+Refatoração do Código
+Agora, vamos refatorar o código, criando uma função que permite ao usuário inserir
+dados para o vetor pessoas[].
+
+#include &lt;stdio.h&gt;
+typedef struct {
+double peso;
+int idade;
+double altura;
+} pessoa;
+void imprimePessoa(pessoa p) {
+printf(&quot;Peso: %.1f. Idade: %d. Altura: %.2lf.\n\n&quot;, p.peso,
+p.idade, p.altura);
+}
+void leDadosPessoa(pessoa *p) {
+printf(&quot;Digite o peso: &quot;);
+scanf(&quot;%lf&quot;, &amp;p-&gt;peso);
+printf(&quot;Digite a idade: &quot;);
+scanf(&quot;%d&quot;, &amp;p-&gt;idade);
+printf(&quot;Digite a altura: &quot;);
+scanf(&quot;%lf&quot;, &amp;p-&gt;altura);
+}
+int main() {
+pessoa pessoas[5];
+// Lê dados para cada pessoa do vetor
+for (int i = 0; i &lt; 5; i++) {
+printf(&quot;Digite os dados da pessoa %d:\n&quot;, i + 1);
+leDadosPessoa(&amp;pessoas[i]);
+}
+// Incrementa a idade da primeira pessoa se maior que 20
+if (pessoas[0].idade &gt; 20)
+pessoas[0].idade++;
+// Imprime os dados das pessoas
+for (int i = 0; i &lt; 5; i++) {
+imprimePessoa(pessoas[i]);
+}
+
+return 0;
+}
+Explicação das Modificações
+1. Função leDadosPessoa: Adicionada para ler os dados de cada pessoa a partir
+da entrada do usuário.
+2. Loop para Leitura: Um loop for foi adicionado para permitir a entrada dos
+dados de cinco pessoas.
+3. Copia de Dados e Impressão: O código agora lê e imprime corretamente os
+dados de todas as pessoas, evitando o problema de acessar elementos não
+inicializados.
