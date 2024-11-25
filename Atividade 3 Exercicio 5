@@ -1,0 +1,21 @@
+Exercicio 5
+#include &lt;stdio.h&gt;
+
+void exibir_impares(int n) {
+for (int i = 1; i &lt;= n; i++) {
+if (i % 2 != 0 &amp;&amp; i % 7 != 0) {
+printf(&quot;%d &quot;, i);
+}
+}
+printf(&quot;\n&quot;);
+}
+
+int main() {
+int n;
+printf(&quot;Digite um número: &quot;);
+scanf(&quot;%d&quot;, &amp;n);
+
+exibir_impares(n);
+
+return 0;
+}
