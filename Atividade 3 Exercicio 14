@@ -1,0 +1,23 @@
+Exercicio 14
+#include &lt;stdio.h&gt;
+
+int calcularResultado(int soma, int primeiroValor, int ultimoValor) {
+return soma + (primeiroValor * 5) + (ultimoValor * 2);
+}
+
+int main() {
+int vetor[10];
+int soma = 0;
+
+for (int i = 0; i &lt; 10; i++) {
+vetor[i] = i + 1; // Preenche o vetor com valores de 1 a 10
+soma += vetor[i]; // Soma os elementos
+}
+
+int resultado = calcularResultado(soma, vetor[0], vetor[9]);
+
+printf(&quot;A soma dos elementos do vetor é: %d\n&quot;, soma);
+printf(&quot;O resultado da função é: %d\n&quot;, resultado);
+
+return 0;
+}
