@@ -1,0 +1,90 @@
+Atividade 3
+#include &lt;stdio.h&gt;
+// Declaração da função calcularResultado
+int calcularResultado(int v[], int n);
+int main() {
+int vetor[5], i, resultado;
+// Preenchendo o vetor com valores
+for (i = 0; i &lt; 5; i++) { // Correção: substituição de &#39;S&#39; por &#39;5&#39;
+vetor[i] = i * 2; // Atribui i * 2 a cada posição do vetor
+}
+// Chamando a função calcularResultado
+resultado = calcularResultado(vetor, 5);
+// Imprimindo o resultado
+printf(&quot;O resultado é: %d\n&quot;, resultado); // Correção:
+substituição de &#39;&amp;d&#39; por &#39;%d&#39;
+return 0; // Retorna 0, indicando que o programa terminou com
+sucesso
+}
+// Função que calcula a soma dos elementos do vetor
+int calcularResultado(int v[], int n) {
+int i, soma = 0;
+// Calculando a soma dos elementos
+for (i = 0; i &lt; n; i++) {
+soma += v[i]; // Adiciona cada elemento do vetor à soma
+}
+return soma; // Retorna a soma calculada
+}
+Comentários do Código
+1. Inclusão de Biblioteca:
+
+#include &lt;stdio.h&gt;
+o Inclui a biblioteca padrão de entrada e saída, necessária para usar funções
+como printf.
+2. Declaração da Função:
+
+int calcularResultado(int v[], int n);
+o Declara a função calcularResultado, que recebe um vetor de inteiros e
+seu tamanho, e retorna um inteiro (a soma dos elementos).
+
+3. Função Principal main:
+
+int main() {
+o Início da execução do programa.
+4. Declaração de Variáveis:
+int vetor[5], i, resultado;
+o Declara um vetor de inteiros de tamanho 5, uma variável i para iteração
+e uma variável resultado para armazenar a soma.
+
+5. Preenchimento do Vetor:
+for (i = 0; i &lt; 5; i++) {
+vetor[i] = i * 2;
+}
+o Um loop for que preenche o vetor com os valores 0, 2, 4, 6, 8 (cada
+posição do vetor recebe o dobro do índice).
+
+6. Chamada da Função:
+
+resultado = calcularResultado(vetor, 5);
+o Chama a função calcularResultado, passando o vetor e seu tamanho, e
+armazena o resultado na variável resultado.
+
+7. Impressão do Resultado:
+printf(&quot;O resultado é: %d\n&quot;, resultado);
+o Imprime o resultado da soma dos elementos do vetor, usando %d para
+formatar a saída como um inteiro.
+8. Retorno da Função Principal:
+return 0;
+o Indica que o programa terminou com sucesso, retornando 0.
+9. Definição da Função calcularResultado:
+int calcularResultado(int v[], int n) {
+o Início da função que calcula a soma dos elementos do vetor.
+10. Declaração de Variáveis Internas:
+int i, soma = 0;
+o Declara um contador i e uma variável soma, inicializada com 0.
+11. Cálculo da Soma:
+for (i = 0; i &lt; n; i++) {
+soma += v[i];
+}
+
+o Um loop que itera sobre os elementos do vetor, acumulando a soma de
+cada elemento na variável soma.
+
+12. Retorno da Soma:
+return soma;
+o Retorna a soma calculada para a função que a chamou.
+
+Conclusão
+O código, após as correções, realiza a tarefa de preencher um vetor com números pares,
+calcular a soma desses números e exibir o resultado. A estrutura do programa utiliza
+funções para modularizar o código, o que é uma boa prática em programação.
