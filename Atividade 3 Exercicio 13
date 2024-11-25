@@ -1,0 +1,21 @@
+Exercicio 13
+#include &lt;stdio.h&gt;
+
+float calcularMedia(int num1, int num2, int num3) {
+return (num1 + num2 + num3) / 3.0;
+}
+
+int main() {
+int num1, num2, num3;
+printf(&quot;Digite o primeiro número: &quot;);
+scanf(&quot;%d&quot;, &amp;num1);
+printf(&quot;Digite o segundo número: &quot;);
+scanf(&quot;%d&quot;, &amp;num2);
+printf(&quot;Digite o terceiro número: &quot;);
+scanf(&quot;%d&quot;, &amp;num3);
+
+float media = calcularMedia(num1, num2, num3);
+printf(&quot;A média é: %.2f\n&quot;, media);
+
+return 0;
+}
