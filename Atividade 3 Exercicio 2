@@ -1,0 +1,110 @@
+Exercicio 2
+Código Corrigido
+Aqui está o código corrigido:
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;locale.h&gt;
+// Definição da estrutura Carro
+typedef struct {
+char modelo[50];
+int ano;
+double preco;
+} Carro; // Correção: usado ponto e vírgula em vez de dois pontos
+// Função para modificar o preço do carro
+void modificarPreco(Carro *c, double novoPreco) { // Correção: usar
+ponteiro e a sintaxe correta
+c-&gt;preco = novoPreco;
+}
+// Função para imprimir os dados do carro
+void imprimirCarro(Carro *c) { // Correção: usar ponteiro e a sintaxe
+correta
+printf(&quot;Modelo: %s\n&quot;, c-&gt;modelo); // Correção: troca de &quot;$s&quot; por
+&quot;%s&quot;
+printf(&quot;Ano: %d\n&quot;, c-&gt;ano); // Correção: troca de &quot;Id&#39;&quot; por &quot;%d&quot;
+printf(&quot;Preço: R$ %.2f\n&quot;, c-&gt;preco); // Correção: troca de
+&quot;$.21f&quot; por &quot;%.2f&quot;
+}
+int main() {
+setlocale(LC_ALL, &quot;portuguese&quot;); // Define a localidade para
+exibir caracteres em português
+Carro carro1; // Correção: declaração de carro1
+strcpy(carro1.modelo, &quot;xyz&quot;); // Atribui o modelo &quot;xyz&quot; ao carro
+carro1.ano = 2020; // Atribui o ano 2020 ao carro
+carro1.preco = 90000.00; // Atribui o preço 90000.00 ao carro
+printf(&quot;Dados antes da modificação: \n&quot;);
+imprimirCarro(&amp;carro1); // Imprime os dados do carro antes da
+modificação
+modificarPreco(&amp;carro1, 115000.00); // Modifica o preço do carro
+para 115000.00
+printf(&quot;\nDados após a modificação do preço: \n&quot;);
+imprimirCarro(&amp;carro1); // Imprime os dados do carro após a
+modificação
+return 0; // Retorna 0, indicando que o programa terminou com
+sucesso
+}
+Comentários do Código
+
+1. Inclusão de Bibliotecas:
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;locale.h&gt;
+o Inclui bibliotecas necessárias: stdio.h para entrada e saída, string.h
+para manipulação de strings, e locale.h para definir configurações
+regionais.
+
+2. Definição da Estrutura Carro:
+typedef struct {
+char modelo[50];
+int ano;
+double preco;
+} Carro;
+o Define uma estrutura chamada Carro, que contém três campos: um array
+de caracteres modelo, um inteiro ano e um double preco.
+
+3. Função modificarPreco:
+void modificarPreco(Carro *c, double novoPreco) {
+c-&gt;preco = novoPreco;
+}
+o Esta função recebe um ponteiro para um Carro e um novo preço. Ela
+altera o campo preco do carro para o novo valor.
+
+4. Função imprimirCarro:
+void imprimirCarro(Carro *c) {
+printf(&quot;Modelo: %s\n&quot;, c-&gt;modelo);
+printf(&quot;Ano: %d\n&quot;, c-&gt;ano);
+printf(&quot;Preço: R$ %.2f\n&quot;, c-&gt;preco);
+}
+o Esta função recebe um ponteiro para um Carro e imprime seus dados no
+console.
+5. Função Principal main:
+int main() {
+setlocale(LC_ALL, &quot;portuguese&quot;);
+o Inicia o programa e define a localidade para exibir os caracteres
+corretamente em português.
+6. Declaração e Inicialização do Carro:
+Carro carro1;
+strcpy(carro1.modelo, &quot;xyz&quot;);
+carro1.ano = 2020;
+carro1.preco = 90000.00;
+o Declara uma variável carro1 do tipo Carro e inicializa seus campos.
+7. Impressão dos Dados Antes da Modificação:
+
+printf(&quot;Dados antes da modificação: \n&quot;);
+imprimirCarro(&amp;carro1);
+o Exibe os dados do carro antes da alteração do preço.
+8. Modificação do Preço:
+modificarPreco(&amp;carro1, 115000.00);
+o Chama a função para modificar o preço do carro para 115000.00.
+9. Impressão dos Dados Após a Modificação:
+printf(&quot;\nDados após a modificação do preço: \n&quot;);
+imprimirCarro(&amp;carro1);
+o Exibe os dados do carro após a alteração do preço.
+10. Retorno:
+return 0;
+o Finaliza o programa retornando 0, indicando que tudo ocorreu conforme
+esperado.
+
+Conclusão
+Com as correções e explicações, agora o código está funcional e pode ser utilizado para
+armazenar e manipular dados de carros. Ele demonstra como utilizar estruturas,
+ponteiros e funções em C.
