@@ -1,0 +1,24 @@
+Exercicio 10
+#include &lt;stdio.h&gt;
+
+void maiorNumero(int num1, int num2) {
+if (num1 &gt; num2) {
+printf(&quot;O maior número é: %d\n&quot;, num1);
+} else if (num2 &gt; num1) {
+printf(&quot;O maior número é: %d\n&quot;, num2);
+} else {
+printf(&quot;Os números são iguais.\n&quot;);
+}
+}
+
+int main() {
+int num1, num2;
+printf(&quot;Digite o primeiro número: &quot;);
+scanf(&quot;%d&quot;, &amp;num1);
+printf(&quot;Digite o segundo número: &quot;);
+scanf(&quot;%d&quot;, &amp;num2);
+
+maiorNumero(num1, num2);
+
+return 0;
+}
