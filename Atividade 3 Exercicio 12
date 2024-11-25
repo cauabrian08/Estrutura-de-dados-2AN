@@ -1,0 +1,23 @@
+Exercicio 12
+#include &lt;stdio.h&gt;
+
+void exibirInverso(int vetor[], int tamanho) {
+for (int i = tamanho - 1; i &gt;= 0; i--) {
+printf(&quot;%d &quot;, vetor[i]);
+}
+printf(&quot;\n&quot;);
+}
+
+int main() {
+int vetor[10];
+
+for (int i = 0; i &lt; 10; i++) {
+printf(&quot;Digite o valor %d: &quot;, i + 1);
+scanf(&quot;%d&quot;, &amp;vetor[i]);
+}
+
+printf(&quot;Números na ordem inversa: &quot;);
+exibirInverso(vetor, 10);
+
+return 0;
+}
