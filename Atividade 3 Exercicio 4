@@ -1,0 +1,19 @@
+
+def calcular_media(notas):
+return sum(notas) / len(notas)
+
+def main():
+notas = []
+for i in range(4):
+nota = float(input(f&quot;Digite a nota {i+1}: &quot;))
+notas.append(nota)
+
+media = calcular_media(notas)
+print(f&quot;A média é: {media:.2f}&quot;)
+if media &gt;= 7:
+print(&quot;Aprovado&quot;)
+else:
+print(&quot;Reprovado&quot;)
+
+if _name_ == &quot;_main_&quot;:
+main()
